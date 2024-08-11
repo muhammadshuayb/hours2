@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Dark Hours</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Dark Hours</h1>
+    </header>
+    <section class="centered">
+        <p>Please enter your Telegram username only just to avoid Hours lost:</p>
+        <input type="text" id="username" placeholder="Enter your username">
+        <button onclick="login()">Login</button>
+    </section>
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            if (username) {
+                localStorage.setItem('username', username);
+                window.location.href = 'index.html';
+            } else {
+                alert('Please enter a username');
+            }
+        }
+    </script>
+</body>
+</html>
